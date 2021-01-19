@@ -21,7 +21,7 @@ public class CarRentalAgent
 
         CarInventory.add(car);
         return true;
-    }
+    } //Adds a car to the array list which stores all the cars
 
     public boolean rentCar(Car car)
     {
@@ -32,8 +32,7 @@ public class CarRentalAgent
             car.setRented(true);
             return true;
         }
-
-    }
+    } //Simulates someone renting a car
 
     public boolean returnCar(Car car)
     {
@@ -44,10 +43,17 @@ public class CarRentalAgent
         }
         else
             return false;
-    }
+    }   //Simulates the return of a car
 
     public void printInventory()
     {
-
-    }
+        System.out.println("Agent Name " + companyName);
+        System.out.println("Agent Address " + Address);
+        System.out.println("Car Model and Make Year-color  VIN               Category");
+        System.out.println("------------------ ----------- ----------------- ------------------");
+        for(int i = 0; i < CarInventory.size(); i++)
+        {
+            System.out.println(CarInventory.get(i).toString());
+        }
+    }       //Prints out all the information about the car rental company and prints the list of cars
 }

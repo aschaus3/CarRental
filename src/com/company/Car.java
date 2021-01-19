@@ -39,7 +39,7 @@ public class Car implements Comparable
     public String getCarInfo()
     {
         return make + ", " + model + " " + year + "-" + colour;
-    }
+    } //returns the basic information about a car
 
     public boolean isSameCar(Car car)
     {
@@ -47,7 +47,7 @@ public class Car implements Comparable
             return true;
         else
             return false;
-    }
+    } //Checks if cars are equal
 
     public String getCatagory()
     {
@@ -61,10 +61,19 @@ public class Car implements Comparable
             return "Full-size(Premium)";
         else
             return "Convertible";
-    }
+    }   //Determines the category of each car
 
     public boolean isRented()
     {
         return rented;
     }
+
+    public String toString()
+    {
+        String MandM = String.format("%-19s",model + ", " + make);
+        String YearColor = String.format("%-12s",year + "-" + colour);
+        String vin = String.format("%-18s",VIN);
+        String Cat = String.format("%-18s", getCatagory());
+        return MandM + YearColor + vin + Cat;
+    }   //Created String using string formats to make my output spaced out properly
 }
